@@ -35,3 +35,20 @@ Node *kth_from_end(Node *head, int position)
     }
     return current->next;
 }
+
+// Another efficient method.
+
+Node *kth(Node *head, int k)
+{
+    Node *current = head, *temp = head;
+    while (k--)
+    {
+        current = current->next;
+    }
+    while (current->next)
+    {
+        current = current->next;
+        temp = temp->next;
+    }
+    return temp;
+}
